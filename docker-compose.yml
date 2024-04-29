@@ -6,7 +6,10 @@ services:
         depends_on:
             database:
                 condition: service_healthy
-        image: joomla:${PHP_IMAGE_NAME}
+        # image: joomla:${PHP_IMAGE_NAME}
+        image: 'joomla:3.10.12-php7.4-ko'
+        build:
+            context: .
         container_name: joomla
         networks:
             - backend
